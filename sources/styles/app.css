@@ -10,19 +10,21 @@ body {
   left: 0;
   top: 0;
   background-color: #fff;
+  font-size: 13px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   .head-container {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid #c9c9c9;
-    box-shadow: 1px 2px 3px #0003;
+    box-shadow: 1px 1px 3px #00000060;
     overflow: hidden;
     gap: 10px;
     z-index: 100;
+    -webkit-app-region: drag;
     .logo {
       display: flex;
-      padding: 5px;
+      padding: 3px 5px;
       width: 30px;
+      -webkit-app-region: no-drag;
       img {
         width: 100%;
       }
@@ -34,11 +36,12 @@ body {
       align-items: center;
       display: flex;
       div {
+        -webkit-app-region: no-drag;
         input[type="text"] {
           width: 320px;
           border: 1px solid #c9c9c9;
           border-radius: 7px;
-          padding: 7px 10px;
+          padding: 5px 10px;
           outline: none;
           transition: all 0.3s;
           &::placeholder{
@@ -51,7 +54,8 @@ body {
         }
         &.box {
           padding: 0px 8px;
-          height: 30px;
+          height: 25px;
+          font-size: 0.8rem;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -59,9 +63,16 @@ body {
           border: 1px solid #d8d8d8;
           border-radius: 7px;
           transition: all 0.1s;
-          font-size: 0.95rem;
           color: #a0a0a0;
           gap: 5px;
+          .fa-wifi{
+            font-size: 0.7rem;
+          }
+          div{
+            top: -5px;
+            display: flex;
+            padding: 0px 0px 3px 0px;
+          }
           &:hover {
             color: #444;
             border: 1px solid #444;
@@ -74,8 +85,9 @@ body {
       padding: 0px 3px;
     }
     .button {
-      width: 40px;
-      height: 40px;
+      -webkit-app-region: no-drag;
+      width: 35px;
+      height: 35px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -83,6 +95,7 @@ body {
       border: 1px solid transparent;
       transition: all 0.3s;
       color: #c1c1c1;
+      font-size: 0.8rem;
       &:hover {
         color: #00000098;
         background: #dedede;
@@ -102,9 +115,9 @@ body {
       width: 50px;
       padding: 5px;
       gap: 5px;
-      background-color: #efefef;
+      background-color: #3c4758;
       border-right: 1px solid #e1e1e1;
-      color: #99c0d6;
+      color: #bfbfbf;
       .items{
         display: flex;
         position: relative;
@@ -114,9 +127,9 @@ body {
         border-radius: 7px;
         transition: all 0.3s;
         &.active{
-          color: #47a7ff;
-          box-shadow: 1px 2px 8px 0px #1444ac4d;
-          background-color: #fff;
+          color: #fff;
+          box-shadow: 1px 2px 4px #00000075 inset;
+          background-color: #00000070;
         }
         .logo{
           display: flex;
@@ -132,13 +145,14 @@ body {
           z-index: 1;
         }
         &:hover{
-          background-color: #77b5ff;
+          background-color: #0000005d;
           text-shadow: 1px 1px 1px #00000020;
           color: #fff;
           &.active{
-            color: #118dff;
-            background-color: #fff;
-            box-shadow: 1px 2px 8px 0px #1259f38e;
+            color: #fff;
+            text-shadow: 1px 1px 2px #00000020;
+            box-shadow: 1px 2px 4px #000000c9 inset;
+            background-color: #00000096;
           }
         }
       }

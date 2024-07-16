@@ -27,7 +27,7 @@
     <div class="f1 g10">
       <div class="flex right searchbox">
         <div class="box"><i class="fa-solid fa-wifi"></i></div>
-        <div class="box"><i class="fa-regular fa-bell"></i> <t class="new-alert">0</t></div>
+        <div class="box"><i class="fa-regular fa-bell"></i> <div class="new-alert">0</div></div>
       </div>
       <div class="flex">
         <div class="button"><i class="fa-solid fa-minus fa-fw"></i></div>
@@ -43,6 +43,9 @@
       </div>
       <div class="items">
         <div class="logo"><i class="fa-solid fa-chart-simple"></i></div>
+      </div>
+      <div class="bottom">
+
       </div>
     </div>
     <div class="right-container"></div>
