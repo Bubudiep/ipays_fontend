@@ -13,42 +13,55 @@
   <script src="sources/lib/jquery-3.6.0.min.js"></script>
   <script src="sources/js/app.js"></script>
 </head>
-
 <body class="default">
-  <div class="head-container">
-    <div class="f1">
-      <div class="logo"><img src="/sources/img/web/icon.png"></div>
-    </div>
-    <div class="f1 acenter searchbox">
-      <div>
-        <input type="text" placeholder="Tìm kiếm...">
-      </div>
-    </div>
-    <div class="f1 g10">
-      <div class="flex right searchbox">
-        <div class="box"><i class="fa-solid fa-wifi"></i></div>
-        <div class="box"><i class="fa-regular fa-bell"></i> <div class="new-alert">0</div></div>
-      </div>
-      <div class="flex">
-        <div class="button"><i class="fa-solid fa-minus fa-fw"></i></div>
-        <div class="button"><i class="fa-regular fa-window-restore"></i></div>
-        <div class="button close"><i class="fa-solid fa-xmark fa-fw"></i></div>
-      </div>
-    </div>
-  </div>
   <div class="body-container">
-    <div class="left-container">
-      <div class="items active">
-        <div class="logo"><i class="fa-solid fa-chart-simple"></i></div>
+    <div class="top-container">
+      <div class="left">
+        <div class="logo">iPays</div>
       </div>
-      <div class="items">
-        <div class="logo"><i class="fa-solid fa-chart-simple"></i></div>
-      </div>
-      <div class="bottom">
-
+      <div class="mid"><input type="text" placeholder="Notifications..."></div>
+      <div class="right">
+        <div class="UI-btn"><button id="win-miniminze"><i class="fa-solid fa-minus"></i></button></div>
+        <div class="UI-btn"><button id="win-min"><i class="fa-solid fa-expand"></i></button></div>
+        <div class="UI-btn"><button id="win-close" class="close"><i class="fa-solid fa-xmark"></i></button></div>
       </div>
     </div>
-    <div class="right-container"></div>
+    <div class="main-container">
+      <div class="app-container">
+        <div class="flex-c">
+          <div class="app-item active" id="report">
+            <i class="fa-solid fa-chart-pie"></i>
+            <div class="tooltiptext">Báo cáo</div>
+          </div>
+          <div class="split"></div>
+          <div class="flex-c" id="list_services">
+            <div class="app-sv">
+              <img src='sources/img/web/icon.png'>
+              <div class="tooltiptext">${list_services[i].Name}</div>
+            </div>
+            <div class="app-sv">
+              <div class="app-sv-name">A</div>
+              <div class="tooltiptext">${list_services[i].Name}</div>
+            </div>
+          </div>
+          <div class="app-item" id="add_services">
+            <i class="fa-solid fa-plus"></i>
+            <div class="tooltiptext">Thêm dịch vụ</div>
+          </div>
+        </div>
+        <div class="flex-c">
+          <div class="app-item" id="profile">
+            <i class="fa-solid fa-user"></i>
+            <div class="tooltiptext">Tài khoản</div>
+          </div>
+          <div class="app-item" id="setting">
+            <i class="fa-solid fa-gear"></i>
+            <div class="tooltiptext">Cài đặt</div>
+          </div>
+        </div>
+      </div>
+      <div class="app-view" id="main-load"></div>
+    </div>
   </div>
 </body>
 <script src="sources/js/index.js"></script>
