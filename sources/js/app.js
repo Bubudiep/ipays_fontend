@@ -3,7 +3,11 @@ const app = {
   config:{
     checkDev: false,
   },
-  user:null,
+  user:{
+    token: null,
+    profile: null,
+    last_check: null,
+  },
   ipc:null,
   random:function (length) {
     let result = '';
