@@ -1,5 +1,8 @@
 $(document).ready(async function(){
   app.init();
+  $("#reload-app").click(async function(){
+    app.ipc.send('reload');
+  });
   $(".app-item").click(async function(){
     var all=document.getElementsByClassName("app-item");
     for (var i=0;i<all.length;i++) {
