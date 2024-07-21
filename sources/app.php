@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IPAYS - Ứng dụng bán hàng</title>
+  <title>iPays</title>
   <!-- Include your favicon -->
   <link rel="icon" type="image/png" href="sources/img/web/icon.png">
   <!-- Other meta tags, stylesheets, etc. -->
@@ -42,19 +42,19 @@
             <div class="tooltiptext">Báo cáo</div>
           </div>
           <div class="split"></div>
-          <div class="flex-c" id="list_services">
-            <!-- <div class="app-sv">
+          <div class="flex-c">
+            <div class="app-sv" id="quan_an">
               <img src='sources/img/web/icon.png'>
               <div class="tooltiptext">${list_services[i].Name}</div>
             </div>
-            <div class="app-sv">
+            <!-- <div class="app-sv">
               <div class="app-sv-name">A</div>
               <div class="tooltiptext">${list_services[i].Name}</div>
             </div> -->
           </div>
-          <div class="app-item" id="add_services">
+          <div class="app_add" id="app_add">
             <i class="fa-solid fa-plus"></i>
-            <div class="tooltiptext">Thêm dịch vụ</div>
+            <div class="tooltiptext">Thêm gian hàng</div>
           </div>
         </div>
         <div class="flex-c">

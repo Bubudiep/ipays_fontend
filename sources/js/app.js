@@ -1,7 +1,9 @@
 const app = {
   config:{
+    demo: true,
     debug:true,
     checkDev: false,
+    api_app: "api",
     api_host: 'localhost',
     api_port: 8000,
     socket_host: 'localhost',
@@ -18,7 +20,7 @@ const app = {
     app.user.token=token;
     if(token){
       try {
-        var user=await app.api("GET","/api/user/");
+        var user=await app.api("GET",`/${app.config.api_app}/user/`);
         if(user.id){
           app.user.profile=user.profile;
           app.user.last_check=new Date();
@@ -30,7 +32,9 @@ const app = {
         $("#loader-first").remove();
         if(await app.confirm("Phiên đăng nhập đã hết hạn! Bạn có muốn đăng nhập lại không?","confirm",false)==true) {
           console.log("Đăng nhập lại!");
+          location.href="/login";
         } else {
+          location.reload();
         }
       };
     } else {
@@ -147,9 +151,32 @@ const app = {
     var box=`<div class="app_bg">
     <div class="app_bg_autoclose"></div>
     <div class="app_bg_view">${view}</div></div>`
-    $("#main-load").append(box);
+    $("body").append(box);
     $(".app_bg_autoclose").click(function(){
       this.parentNode.remove();
+    });
+  },
+  whitebox : function(title,view){
+    var box=`<div class="app_bg">
+      <div class="autoclose"></div>
+      <div class="whitebox">
+        <div class="box-header">
+          <div class="box-title">${title}</div>
+          <div class="box-close">
+            <button class="cls"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+        </div>
+        <div class="box-body">
+          ${view}
+        </div>
+      </div>
+    </div>`
+    $("body").append(box);
+    $(".autoclose").click(function(){
+      this.parentNode.remove();
+    });
+    $(".cls").click(function(){
+      this.parentNode.parentNode.parentNode.parentNode.remove();
     });
   },
   init: async function(checktoken=true){
