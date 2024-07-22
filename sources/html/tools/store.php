@@ -1,9 +1,9 @@
 <div class="left-subItem">
-  <div class="subItem active">
+  <div class="subItem active" id="dashboard">
     <div class="logo"><i class="fa-solid fa-chart-simple"></i></div>
     <div class="name">Tổng quan</div>
   </div>
-  <div class="subItem">
+  <div class="subItem" id="panel">
     <div class="logo"><i class="fa-solid fa-solar-panel"></i></div>
     <div class="name">Quản trị</div>
   </div>
@@ -46,6 +46,7 @@
     <div class="logo"><i class="fa-solid fa-headset"></i></div>
     <div class="name">Hỗ trợ</div>
   </div>
+  <div class="subNav-tools"><i class="fa-solid fa-caret-right"></i></div>
 </div>
-<div class="main-container"></div>
+<div class="main-container" id="main-container"></div>
 <script src="sources/js/tools/store.js"></script>

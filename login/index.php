@@ -103,8 +103,8 @@ $(document).ready(async function(){
           var token=await app.login(form);
           if (token.response.access_token){
             app.setCookie("token",token.response.access_token,token.response.expires_in*1000);
-            app.ipc.send("maximize");
             location.href="/";
+            app.ipc.send("onmaximize");
           } else {
             console.log(token);
             app.error("Lỗi tài khoản hoặc mật khẩu!");
@@ -112,6 +112,7 @@ $(document).ready(async function(){
             return;
           }
         } catch (e){
+          console.log(e);
           if(e.xhr.responseJSON.error=="invalid_grant"){
             app.error("Tài khoản/mật khẩu không chính xác!");
           } else {

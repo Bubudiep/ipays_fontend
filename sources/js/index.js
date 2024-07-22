@@ -79,7 +79,7 @@ $(document).ready(async function(){
     this.classList.add("active");
     if(this.id){
       $("#main-load").load("sources/html/tools/store.php?id="+this.id);
-      window.history.replaceState( {} , 'foo', '?function=UserServices&id='+this.id);
+      window.history.replaceState( {} , 'foo', '?function=store&id='+this.id);
     }
   });
   $("#win-min").click(async function(){
