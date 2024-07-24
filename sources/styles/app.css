@@ -12,6 +12,51 @@ body {
   background-color: #fff;
   font-size: 13px;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  .dashboard-container{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    .dashboard-box{
+      border-radius: 7px;
+      background-color: #fff;
+      padding: 10px;
+      flex: 1;
+      min-width: 150px;
+      box-shadow: 1px 1px 6px #00000024;
+      .name{
+        white-space: nowrap;
+        font-weight: bold;
+      }
+      .data{
+        font-size: 30px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        flex: 1;
+      }
+      .content{
+        font-weight: 600;
+        color: #555;
+      }
+      .diff{
+        margin-top: 2px;
+        color: #a3a3a3;
+        font-size: 12px;
+        display: flex;
+        .right{
+          font-weight: 600;
+          margin-left: auto;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          i{
+            padding-top: 2px;
+            font-size: 9px;
+          }
+        }
+      }
+    }
+  }
   .load-bg{
     display: flex;
     position: fixed;
@@ -466,7 +511,7 @@ body {
             width: 70%;
             height: 70%;
             border-radius: 10px;
-            border: 4px solid #fff;
+            border: 3px solid #fff;
             background-color: #edfdff;
             box-shadow: 1px 2px 3px #00000052;
           }
@@ -486,13 +531,99 @@ body {
         display: flex;
         flex: 1;
         overflow: hidden;
-        background-color: #d3d6dd;
+        background-color: #e3e5ea;
+        .nable-container{
+          overflow-y: auto;
+          overflow-x: hidden;
+          width: 100%;
+          height: 100%;
+          flex: 1;
+          .chart-list{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+          }
+          .chart-Box{
+            border-radius: 7px;
+            background-color: #fff;
+            padding: 10px;
+            min-width: 400px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 1px 1px 6px #00000024;
+            &.w40{
+              width: calc(40% - 25px);
+            }
+            .table-data{
+              display: flex;
+              height: -webkit-fill-available;
+              overflow: hidden;
+              table{
+                width: 100%;
+                th{
+                  white-space: nowrap;
+                  text-align: left;
+                  padding: 3px 5px;
+                  font-size: 12px;
+                  font-weight: 600;
+                  color: #999;
+                }
+                tr{
+                  td{
+                    null{
+                      padding: 40px 10px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-style: italic;
+                    }
+                  }
+                }
+              }
+            }
+            .chart-title{
+              display: flex;
+              padding: 5px;
+              gap: 3px;
+              font-weight: 600;
+              flex: 1;
+              .right{
+                cursor: pointer;
+                transition: all 0.3s;
+                margin-left: auto;
+                i{
+                  color: #cfcfcf;
+                }
+                &.active{
+                  i{
+                    color: #000000;
+                  }
+                }
+              }
+            }
+            .chart-input{
+              flex: 1;
+              display: flex;
+              height: 300px;
+              .apexcharts-canvas{
+                padding-top: 7px;
+              }
+            }
+          }
+          .sub-view{
+            display: flex;
+            flex-direction: column;        
+            animation: fadeRight;
+            animation-duration: 0.5s;
+            gap: 10px;
+          }
+        }
         .split{
           margin: 5px;
           border-bottom: 1px solid #dbdbdb;
         }
         .left-subItem{
           display: flex;
+          height: -webkit-fill-available;
           box-shadow: 1px 2px 3px #00000030;
           width: 200px;
           background-color: #fff;
@@ -500,6 +631,9 @@ body {
           padding: 5px;
           gap: 5px;
           position: relative;
+          transition: all 0.2s;    
+          animation: fadeLeft;
+          animation-duration: 0.1s;
           .subNav-tools{
             position: absolute;
             height: 28px;
@@ -541,6 +675,7 @@ body {
             color: #2c75a5;
             font-weight: 600;
             height: 28px;
+            white-space: nowrap;
             .logo{
               width: 30px;
               display: flex;
@@ -568,9 +703,15 @@ body {
             .subItem{
               .logo{
                 flex: 1;
+                font-size: 15px;
               }
               .name{
                 display: none;
+              }
+              &.active{
+                .logo{
+                  padding-right: 5px;
+                }
               }
             }
           }
@@ -702,6 +843,13 @@ button{
     color: #1d1d1d;
     border: 1px solid #494949;
   }
+}
+.pd20x10{
+  padding: 10px 20px;
+}
+
+.pd10{
+  padding: 10px;
 }
 
 .g5 {
@@ -962,6 +1110,10 @@ button{
       border-radius: 7px;
       border: 1px solid #b3b3b3;
       outline: none;
+      &:focus{
+        border: 1px solid #0573da;
+        color: #002548;
+      }
     }
     button{
       display: flex;

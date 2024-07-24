@@ -12,6 +12,7 @@
   <link rel="stylesheet" type="text/css" href="sources/styles/app.css">
   <link rel="stylesheet" type="text/css" href="sources/lib/fontawesome-free-6.5.2-web/css/all.min.css">
   <script src="sources/lib/jquery-3.6.0.min.js"></script>
+  <script src="sources/lib/apexcharts.min.js"></script>
   <script src="sources/js/app.js"></script>
 </head>
 <body class="default">

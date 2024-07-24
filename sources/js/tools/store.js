@@ -1,5 +1,5 @@
 $(document).ready(async function() {
-  $("#main-container").load(`/sources/html/tools/store/dashboard.php`, (responseText, textStatus, jqXHR) => {
+  await $("#nable-container").load(`/sources/html/tools/store/dashboard.php`, (responseText, textStatus, jqXHR) => {
     if (textStatus === "error") {
       console.error("Error loading content:", jqXHR.status, jqXHR.statusText);
       // Additional error handling logic here
@@ -14,7 +14,7 @@ $(document).ready(async function() {
       item.classList.remove("active");
     });
     this.classList.add("active");
-    $("#main-container").load(`/sources/html/tools/store/${this.id}.php`);
+    $("#nable-container").load(`/sources/html/tools/store/${this.id}.php`);
   });
   $(".subNav-tools").click(async function(){
     this.classList.toggle("active");

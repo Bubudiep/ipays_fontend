@@ -18,7 +18,7 @@ $(document).ready(async function(){
     }
   });
   $("#app_add").click(async function(){
-    var view=`<div class="flex">
+    var view=`<div class="flex g10 pd20x10">
     <div class="guide">
       <div class="guide-section"><i class="fa-regular fa-lightbulb"></i> Mẹo nhỏ</div>
       <div class="guidebox">
@@ -78,7 +78,7 @@ $(document).ready(async function(){
     }
     this.classList.add("active");
     if(this.id){
-      $("#main-load").load("sources/html/tools/store.php?id="+this.id);
+      await $("#main-load").load("sources/html/tools/store.php?id="+this.id);
       window.history.replaceState( {} , 'foo', '?function=store&id='+this.id);
     }
   });
