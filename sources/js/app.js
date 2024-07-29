@@ -4,9 +4,9 @@ const app = {
     debug: true,
     checkDev: false,
     api_app: "api",
-    api_host: "192.168.1.99",
+    api_host: "localhost",
     api_port: 8000,
-    socket_host: "192.168.1.99",
+    socket_host: "localhost",
     socket_port: 3000,
   },
   user: {
